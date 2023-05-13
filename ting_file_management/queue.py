@@ -9,6 +9,8 @@ class Queue(AbstractQueue):
         return len(self.items)
 
     def enqueue(self, value):
+        if value in self.items:
+            return None
         self.items.append(value)
 
     def dequeue(self):
